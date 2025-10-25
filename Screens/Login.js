@@ -11,7 +11,7 @@ export default function Login() {
 
   const navigation = useNavigation();
 
-  const handleLogin = async () => {
+  async function handleLogin() {
     try {
       // Firebase에서 제공하는 내장 로그인 함수 사용
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
@@ -24,7 +24,7 @@ export default function Login() {
     } catch (error) {
       Alert.alert('로그인 실패', error.message);
     }
-  };
+  }
 
   return (
     <KeyboardAvoidingView

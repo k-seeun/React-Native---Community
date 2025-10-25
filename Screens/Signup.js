@@ -14,7 +14,7 @@ export default function Signup() {
 
   const navigation = useNavigation();
 
-  const handleSignup = async () => {
+  async function handleSignup() {
     try {
       // Firebase에서 제공하는 내장 회원가입 함수 사용
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
@@ -42,7 +42,7 @@ export default function Signup() {
         Alert.alert('Signup Failed', error.message);
       }
     }
-  };
+  }
 
   return (
     <ScrollView style={styles.scrollView} contentContainerStyle={styles.contentContainer}>
